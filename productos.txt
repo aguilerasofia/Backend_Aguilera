@@ -1,0 +1,22 @@
+
+[
+    {"name":"Shirt",
+    "price":10000,
+    "thumbnail":"https://www.digitalsport.com.ar/files/products/62b3abec1fecd-581975-500x500.jpg",
+    "id":1},
+    
+    {"name":"Pants",
+    "price":4000,
+    "thumbnail":"https://www.digitalsport.com.ar/files/products/626bbd5bee3ce-565281-500x500.jpg",
+    "id":2},
+    
+    {"name":"Shoes",
+    "price":80000,
+    "thumbnail":"https://www.digitalsport.com.ar/files/products/62f178bf476dd-601171-500x500.jpg",
+    "id":3},
+    
+    {"name":"Shirt",
+    "price":10000,
+    "thumbnail":"https://www.digitalsport.com.ar/files/products/62b3abec1fecd-581975-500x500.jpg",
+    "id":4}
+]
