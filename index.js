@@ -9,17 +9,9 @@ class Container{
 
     async getAll(){
         let content  = await fs.promises.readFile(this.file)
-        let contObj = JSON.parse(content)   
-        return contObj
+        //let contObj = JSON.parse(content)   
+        return content
     }
-
-/*     async randomProduct(){
-        let contObj = await this.getAll()
-        let random = Math.floor(Math.random()*contObj.length);
-        contObj.push(random)            
-        await fs.promises.writeFile(this.file, JSON.stringify(contObj))
-        return result
-    } */
 
 }
 
@@ -36,7 +28,6 @@ useContainer()
 //EXPORT
 module.exports = {useContainer}
 module.exports = Container
-
 
 
 

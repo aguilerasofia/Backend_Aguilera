@@ -5,22 +5,32 @@ const express = require('express')
 
 const app = express()
 
+let container = new Container('productos.txt')
+
+const randomProduct = async () => {
+    const random = await container.getAll()
+    const randomParse = JSON.parse(random)
+    const getRandom = randomParse[Math.floor(Math.random() * randomParse.length)]
+    return getRandom
+}
+
 
 //RUTAS
 
-app.get('/', (req, res) => {
+app.get ('/', (req, res) => {
     res.send('<h1 style="color:grey;"> Desafio servidor express </h1>')
 })
 
-app.get('/productos', (req, res) => {
-    let container = new Container()
-    let products = container.getAll()
+app.get('/productos', async (req, res) => {
+    let products = await container.getAll()
     res.send(`Productos disponibles: ${products}`)
 })
 
-/* app.get('/productoRandom', (req, res) => {
-    res.send(`Producto al azar: ${contObj}`)
-}) */
+app.get('/productoRandom', async (req, res) => {
+    let obtainRandom = await randomProduct()
+    let result = JSON.stringify(obtainRandom)
+    res.send(`Producto al azar: ${result}`)
+})
 
 
 //PUERTO
