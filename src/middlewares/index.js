@@ -20,6 +20,15 @@ const middleware2 = (req, res, next) => {
     next()
 }
 
+const middleware3 = (req, res, next) => {
+    if(req.body.id){
+        res.send.body
+    }else{
+        res.status(404).send ({error: "No existe ese producto"})
+    }
+
+    next()
+}
 
 
-module.exports = { middleware1, middleware2 }
+module.exports = { middleware1, middleware2, middleware3 }
