@@ -6,6 +6,7 @@ const { middleware3 } = require('../middlewares')
 
 routerProducts.get('/', (req,res) => {
     res.json({msg: 'Get products'})
+    res.json(body)
 })
 
 routerProducts.post('/', middleware3, (req,res) => {

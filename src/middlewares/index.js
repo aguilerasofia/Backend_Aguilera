@@ -23,8 +23,9 @@ const middleware2 = (req, res, next) => {
 const middleware3 = (req, res, next) => {
     if(req.body.id){
         res.send.body
+        console.log("tiene id")
     }else{
-        res.status(404).send ({error: "No existe ese producto"})
+        res.status(404).send ({error: "producto no encontrado"})
     }
 
     next()
