@@ -1,12 +1,12 @@
 class Container{ 
     constructor(){
-        this.productos = []
+        this.productos = productos
     }
 
-    save(producto){
+    save(productos){
         let id = this.productos.length + 1;
         producto.id = 1 //cambiar para cada uno nuevo
-        this.productos.push(producto)
+        this.productos.push(productos)
     }
 
     getAll(){
@@ -15,8 +15,14 @@ class Container{
 
     getById(id){
         //retorna producto con id
+        let productos = this.getAll()
+        let result = productos.find(obj => obj.id === id)
+        return result
     }
 
 }
+
+let productos = []
+
 
 module.exports = Container
