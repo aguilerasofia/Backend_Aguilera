@@ -1,12 +1,12 @@
 class Container{ 
     constructor(){
-        this.productos = productos
+        this.productos = []
     }
 
-    save(productos){
+    save(producto){
         let id = this.productos.length + 1;
-        producto.id = 1 //cambiar para cada uno nuevo
-        this.productos.push(productos)
+        producto.id = id 
+        this.productos.push(producto)
     }
 
     getAll(){
@@ -14,15 +14,19 @@ class Container{
     }
 
     getById(id){
-        //retorna producto con id
-        let productos = this.getAll()
-        let result = productos.find(obj => obj.id === id)
-        return result
+        let productFound = this.productos.find(obj => obj.id === +id)
+        return productFound
     }
 
-}
+    deleteById(id){
+        this.productos = this.productos.filter(obj => obj.id !== +id)
+    }
 
-let productos = []
+    updateById(id, newProduct){
+        this.productos = this.productos.map(obj =>  obj.id === id ? {...newProduct, id } : obj)
+    }
+}
 
 
 module.exports = Container
+

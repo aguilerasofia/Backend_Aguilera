@@ -21,7 +21,7 @@ const middleware2 = (req, res, next) => {
 }
 
 const middleware3 = (req, res, next) => {
-    if(req.body.id){
+    if(req.body.id != 0){
         res.send.body
         console.log("tiene id")
     }else{
